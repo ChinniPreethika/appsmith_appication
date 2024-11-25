@@ -1,0 +1,20 @@
+
+
+-- Insert an audit log entry for the insert operation
+INSERT INTO audit_log (table_name, operation, old_data, new_data, updated_by, updated_at)
+VALUES (
+    'token_updater_rule',  -- Table name
+    'insert',  -- Operation type
+    NULL,  -- No old data for insert operation
+    '{{ JSON.stringify({
+        esme_addr: JSON.parse(pending_approvals.selectedRow.changed_data).esme_addr,
+        rule_id: JSON.parse(pending_approvals.selectedRow.changed_data).rule_id,
+        url: JSON.parse(pending_approvals.selectedRow.changed_data).url,
+        params: JSON.parse(pending_approvals.selectedRow.changed_data).params,
+        method_type: JSON.parse(pending_approvals.selectedRow.changed_data).method_type,
+        request_type: JSON.parse(pending_approvals.selectedRow.changed_data).request_type,
+        token_expiry_time_in_sec: JSON.parse(pending_approvals.selectedRow.changed_data).token_expiry_time_in_sec
+    }) }}',  -- New data (from the changed data)
+    '{{ appsmith.store.loggedInUserName || "unknown" }}',  -- Fallback value for updated_by if loggedInUserName is not available
+    NOW()  -- Timestamp of the update
+);

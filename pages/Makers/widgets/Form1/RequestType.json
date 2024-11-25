@@ -1,0 +1,69 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 73,
+  "bottomRowBeforeCollapse": 77,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": "{{UseCaseDropdown.selectedOptionValue === \"usecase3\"}}",
+  "key": "5dnpskus9q",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Request Type",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 24,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 112,
+  "mobileLeftColumn": 27,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 105,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 77,
+  "originalTopRow": 70,
+  "parentColumnSpace": 14.7109375,
+  "parentId": "mjs8r6zqjm",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 40,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"label\": \"Query String (QS)\",\n    \"value\": \"QS\"\n  },\n  {\n    \"label\": \"POST\",\n    \"value\": \"POST\"\n  },\n  {\n    \"label\": \"GET\",\n    \"value\": \"GET\"\n  },\n  {\n    \"label\": \"PUT\",\n    \"value\": \"PUT\"\n  },\n  {\n    \"label\": \"DELETE\",\n    \"value\": \"DELETE\"\n  },\n  {\n    \"label\": \"PATCH\",\n    \"value\": \"PATCH\"\n  },\n  {\n    \"label\": \"HEAD\",\n    \"value\": \"HEAD\"\n  },\n  {\n    \"label\": \"OPTIONS\",\n    \"value\": \"OPTIONS\"\n  }\n]\n",
+  "topRow": 66,
+  "topRowBeforeCollapse": 70,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "dhc0y1dptc",
+  "widgetName": "RequestType"
+}

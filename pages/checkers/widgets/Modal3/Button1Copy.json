@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 31,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "0170pgun2n",
+  "leftColumn": 2,
+  "minWidth": 120,
+  "mobileBottomRow": 46,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 42,
+  "needsErrorInfo": false,
+  "onClick": "{{ \n  JSObject2.handleRowSelection(pending_approvals.selectedRow)\n.then(() => storeValue('status', 'APPROVED'))  // Store the status as 'APPROVED'\n    .then(() => updateApprovalStatus.run())  // Run the query to update the approval status\n    .then(() => getting.run())  // Run the query to fetch data after status update\n.then(() => showAlert('Approval process completed successfully!', 'success'))\n    .catch((error) => showAlert(\"Error: \" + error.message, \"error\"))\n\n     // Handle any errors\n}}",
+  "originalBottomRow": 31,
+  "originalTopRow": 27,
+  "parentColumnSpace": 20.03125,
+  "parentId": "y3p1cplw9s",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 17,
+  "text": "approve",
+  "topRow": 27,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "mro7unssjc",
+  "widgetName": "Button1Copy"
+}

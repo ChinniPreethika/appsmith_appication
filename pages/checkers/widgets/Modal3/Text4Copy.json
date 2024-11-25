@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 22,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "zlekqyyq9x",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 45,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 41,
+  "needsErrorInfo": false,
+  "originalBottomRow": 22,
+  "originalTopRow": 9,
+  "overflow": "NONE",
+  "parentColumnSpace": 20.03125,
+  "parentId": "y3p1cplw9s",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 48,
+  "shouldTruncate": false,
+  "text": "{{\n  \"Change ID: \" + (pending_approvals.selectedRow ? pending_approvals.selectedRow[\"change_id\"] : \"N/A\") + \"\\n\" +\n  \"Use Case: \" + (pending_approvals.selectedRow ? pending_approvals.selectedRow[\"use_case\"] : \"N/A\") + \"\\n\" +\n  \"Changed By: \" + (pending_approvals.selectedRow ? pending_approvals.selectedRow[\"changed_by\"] : \"N/A\") + \"\\n\" +\n  \"Timestamp: \" + (pending_approvals.selectedRow ? pending_approvals.selectedRow[\"change_timestamp\"] : \"N/A\") + \"\\n\" +\n  \"Changed Data:\\n\" +\n  (\n    pending_approvals.selectedRow && pending_approvals.selectedRow[\"changed_data\"]\n      ? (() => {\n          try {\n            const parsedData = JSON.parse(pending_approvals.selectedRow[\"changed_data\"]); // Parse the JSON string\n            \n            // If use_case is 4, display only the specific fields for use case 4\n            if (pending_approvals.selectedRow[\"use_case\"] === \"usecase4\") {\n              const filteredData = {\n                i_RuleId: parsedData[\"i_RuleId\"],\n                timestamp_format: parsedData[\"timestamp_format\"],\n                http_connection_timeout_inmills: parsedData[\"http_connection_timeout_inmills\"]\n              };\n              \n              return Object.entries(filteredData)\n                .filter(([key, value]) => value !== undefined) // Only show keys with valid values\n                .map(([key, value]) => `${key}: ${value || \"N/A\"}`) // Format key-value pairs\n                .join(\"\\n\"); // Join them with line breaks\n            }\n            \n            // If use_case is 1, display only the specific fields for use case 1\n            if (pending_approvals.selectedRow[\"use_case\"] === \"usecase1\") {\n              const filteredData = {\n                esmeaddr: parsedData[\"esmeaddr\"],\n                uname: parsedData[\"uname\"],\n                ip_validation: parsedData[\"ip_validation\"],\n                Lounge_DLT: parsedData[\"Lounge_DLT\"],\n                erp_mdate: parsedData[\"erp_mdate\"]\n              };\n\n              return Object.entries(filteredData)\n                .filter(([key, value]) => value !== undefined) // Only show keys with valid values\n                .map(([key, value]) => `${key}: ${value || \"N/A\"}`) // Format key-value pairs\n                .join(\"\\n\"); // Join them with line breaks\n            }\n\n            // If use_case is 2, display only the specific fields for use case 2\n            if (pending_approvals.selectedRow[\"use_case\"] === \"usecase2\") {\n              const filteredData = {\n                I_Esmeaddr: parsedData[\"I_Esmeaddr\"],\n                I_RuleID: parsedData[\"I_RuleID\"],\n                token_url: parsedData[\"token_url\"],\n                api_header_token: parsedData[\"api_header_token\"],\n                token_expire_time: parsedData[\"token_expire_time\"],\n                token_expire_err_code: parsedData[\"token_expire_err_code\"],\n                auth_enabled: parsedData[\"auth_enabled\"],\n                token_enabled: parsedData[\"token_enabled\"],\n                token_url_method_type: parsedData[\"token_url_method_type\"]\n              };\n\n              return Object.entries(filteredData)\n                .filter(([key, value]) => value !== undefined) // Only show keys with valid values\n                .map(([key, value]) => `${key}: ${value || \"N/A\"}`) // Format key-value pairs\n                .join(\"\\n\"); // Join them with line breaks\n            }\n\n            // If use_case is 3, display only the specific fields for use case 3\n            if (pending_approvals.selectedRow[\"use_case\"] === \"usecase3\") {\n              const filteredData = {\n                virtualNumber: parsedData[\"virtualNumber\"],\n                esme_addr: parsedData[\"esme_addr\"],\n                rule_id: parsedData[\"rule_id\"],\n                url: parsedData[\"url\"],\n                params: parsedData[\"params\"],\n                method_type: parsedData[\"method_type\"],\n                request_type: parsedData[\"request_type\"],\n                token_expiry_time_in_sec: parsedData[\"token_expiry_time_in_sec\"]\n              };\n\n              return Object.entries(filteredData)\n                .filter(([key, value]) => value !== undefined) // Only show keys with valid values\n                .map(([key, value]) => `${key}: ${value || \"N/A\"}`) // Format key-value pairs\n                .join(\"\\n\"); // Join them with line breaks\n            }\n\n            // Default case: display all data\n            return Object.entries(parsedData)\n              .map(([key, value]) => `${key}: ${value || \"N/A\"}`) // Format key-value pairs\n              .join(\"\\n\"); // Join them with line breaks\n          } catch (e) {\n            console.error(\"Error parsing Changed Data:\", e);\n            return \"Invalid JSON format in Changed Data.\";\n          }\n        })()\n      : \"N/A\"\n  )\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 9,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "eod92rrza5",
+  "widgetName": "Text4Copy"
+}

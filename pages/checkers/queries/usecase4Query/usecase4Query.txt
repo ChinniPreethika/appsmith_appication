@@ -1,0 +1,6 @@
+UPDATE IREPDB.PDB_URLRule 
+SET 
+    timestamp_format = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).timestamp_format }}',
+    http_connection_timeout_inmills = '{{JSON.parse(pending_approvals.selectedRow.changed_data).http_connection_timeout_inmills }}'
+WHERE 
+    i_RuleId = '{{JSON.parse(pending_approvals.selectedRow.changed_data).i_RuleId }}';

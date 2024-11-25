@@ -1,0 +1,3 @@
+UPDATE user_changes_staging
+SET approval_status = '{{appsmith.store.status}}'
+WHERE change_id = '{{pending_approvals.selectedRow.change_id}}';

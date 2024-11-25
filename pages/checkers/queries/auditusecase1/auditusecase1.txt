@@ -1,0 +1,13 @@
+INSERT INTO audit_log (table_name, operation, old_data, new_data, updated_by, updated_at)
+VALUES (
+    'Users',  -- Table name
+    'update',  -- Operation type
+    '{{ JSON.stringify(usecase1old.data) }}',  -- Old data (fetched from the query)
+    '{{ JSON.stringify({
+        ip_validation: JSON.parse(pending_approvals.selectedRow.changed_data).ip_validation,
+        Lounge_DLT: JSON.parse(pending_approvals.selectedRow.changed_data).Lounge_DLT,
+        erp_mdate: moment(JSON.parse(pending_approvals.selectedRow.changed_data).erp_mdate).format("YYYY-MM-DD HH:mm:ss")
+    }) }}',  -- New data (from the changed data)
+    '{{ appsmith.store.loggedInUserName }}',  -- User performing the update
+    NOW()  -- Timestamp of the update
+);

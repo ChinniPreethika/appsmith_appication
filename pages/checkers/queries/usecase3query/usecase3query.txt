@@ -1,0 +1,12 @@
+INSERT INTO IREPDB.token_updater_rule 
+(esme_addr, rule_id, url, params, method_type, request_type, token_expiry_time_in_sec) 
+VALUES 
+(
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).esme_addr }}', 
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).rule_id }}', 
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).url }}', 
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).params }}', 
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).method_type }}', 
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).request_type }}', 
+    '{{ JSON.parse(pending_approvals.selectedRow.changed_data).token_expiry_time_in_sec }}'
+);

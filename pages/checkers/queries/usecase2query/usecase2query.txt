@@ -1,0 +1,10 @@
+UPDATE IREPDB.PDB_URLRule 
+SET 
+    token_url = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).token_url }}',
+    api_header_token = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).api_header_token }}',
+    token_expire_time = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).token_expire_time }}',
+    token_expire_err_code = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).token_expire_err_code }}',
+    auth_enabled = {{ JSON.parse(pending_approvals.selectedRow.changed_data).auth_enabled }},
+    token_url_method_type = '{{JSON.parse(pending_approvals.selectedRow.changed_data).token_url_method_type }}'
+WHERE 
+   I_RuleID = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).I_RuleID }}';

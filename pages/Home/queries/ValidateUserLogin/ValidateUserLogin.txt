@@ -1,0 +1,3 @@
+SELECT name, usertype FROM uni_users
+WHERE name = '{{ inp_name.text }}'
+AND password = '{{ CryptoUtils.md5(inp_password.text) }}';

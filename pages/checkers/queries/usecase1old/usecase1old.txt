@@ -1,0 +1,8 @@
+SELECT 
+    ip_validation, 
+    Lounge_DLT, 
+    erp_mdate 
+FROM 
+    custdb.Users 
+WHERE 
+    esmeaddr = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).esmeaddr }}';

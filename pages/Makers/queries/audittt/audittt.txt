@@ -1,0 +1,34 @@
+INSERT INTO audit_log (table_name, operation, old_data, new_data, updated_by)
+VALUES (
+    'user_changes_staging',  -- Table where the change occurred
+    'INSERT',                -- Type of operation
+    NULL,                    -- Old data is NULL for an insert
+    '{{JSON.stringify({
+        esmeaddr: EsmeAddrInput.text,
+        uname: UsernameInpu.text,
+        ip_validation: IPValidationSwitch.isSwitchedOn ? 1 : 0,
+        Lounge_DLT: dlt_lounge.isChecked ? '1' : '0',
+        erp_mdate: moment(ModificationDatePicker.selectedDate).format("YYYY-MM-DD HH:mm:ss"),
+        I_Esmeaddr: esmeInput.text,
+        I_RuleID: RuleIdInput.text,
+        token_url: TokenUrlInput.text,
+        api_header_token: ApiHeaderTokenInput.text,
+        token_expire_time: TokenExpireTimeInput.text,
+        token_expire_err_code: TokenExpireErrCodeInput.text,
+        auth_enabled: AuthEnabledCheckbox.isChecked ? '1' : '0',
+        token_enabled: TokenEnabledToggle.isSwitchedOn ? '1' : '0',
+        token_url_method_type: TokenUrlMethodTypeDropdown.selectedOptionValue,
+        virtualNumber: VirtualNumber.text,
+        esme_addr: EsmeAddr.text,
+        rule_id: RuleId.text,
+        url: Url.text,
+        params: Params.text,
+        method_type: MethodType.selectedOptionValue,
+        request_type: RequestType.selectedOptionValue,
+        token_expiry_time_in_sec: TokenExpiryTime.text,
+        i_RuleId: InputRuleId.text,
+        timestamp_format: InputTimestampFormat.text,
+        http_connection_timeout_inmills: InputHttpConnectionTimeout.text
+    })}}',
+    '{{appsmith.store.loggedInUserName}}'  -- User making the change
+);

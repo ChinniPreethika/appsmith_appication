@@ -1,0 +1,16 @@
+INSERT INTO audit_log (table_name, operation, old_data, new_data, updated_by, updated_at)
+VALUES (
+    'PDB_URLRule',  -- Table name
+    'update',  -- Operation type
+    '{{ JSON.stringify(usecase2fetchold.data) }}',  -- Old data (Fetched current data before the update)
+    '{{ JSON.stringify({
+        token_url: JSON.parse(pending_approvals.selectedRow.changed_data).token_url,
+        api_header_token: JSON.parse(pending_approvals.selectedRow.changed_data).api_header_token,
+        token_expire_time: JSON.parse(pending_approvals.selectedRow.changed_data).token_expire_time,
+        token_expire_err_code: JSON.parse(pending_approvals.selectedRow.changed_data).token_expire_err_code,
+        auth_enabled: JSON.parse(pending_approvals.selectedRow.changed_data).auth_enabled,
+        token_url_method_type: JSON.parse(pending_approvals.selectedRow.changed_data).token_url_method_type
+    }) }}',  -- New data (from the changed data)
+    '{{ appsmith.store.loggedInUserName || "unknown" }}',  -- User performing the update, fallback if the user is not logged in
+    NOW()  -- Timestamp of the update
+);

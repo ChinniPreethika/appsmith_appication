@@ -1,0 +1,12 @@
+INSERT INTO audit_log (table_name, operation, old_data, new_data, updated_by, updated_at)
+VALUES (
+    'PDB_URLRule',  -- Table name
+    'update',  -- Operation type
+    '{{ JSON.stringify(fetchirep.data) }}',  -- Old data (from Query 1 - Fetching current values before the update)
+    '{{ JSON.stringify({
+        timestamp_format: JSON.parse(pending_approvals.selectedRow.changed_data).timestamp_format,
+        http_connection_timeout_inmills: JSON.parse(pending_approvals.selectedRow.changed_data).http_connection_timeout_inmills
+    }) }}',  -- New data (from form values)
+    '{{ appsmith.store.loggedInUserName }}',  -- User performing the update
+    NOW()  -- Timestamp of the update
+);

@@ -1,0 +1,6 @@
+SELECT change_id,
+use_case,
+changed_data,
+changed_by,
+change_timestamp,
+approval_status FROM user_changes_staging ;

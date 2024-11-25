@@ -1,0 +1,7 @@
+UPDATE custdb.Users 
+SET 
+    ip_validation = {{JSON.parse(pending_approvals.selectedRow.changed_data).ip_validation }},
+    Lounge_DLT = {{ JSON.parse(pending_approvals.selectedRow.changed_data).Lounge_DLT }},
+    erp_mdate = '{{ moment(JSON.parse(pending_approvals.selectedRow.changed_data).erp_mdate).format("YYYY-MM-DD HH:mm:ss") }}'
+WHERE 
+    esmeaddr = {{ JSON.parse(pending_approvals.selectedRow.changed_data).esmeaddr }};

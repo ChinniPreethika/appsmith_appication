@@ -1,0 +1,1 @@
+SELECT * FROM IREPDB.PDB_URLRule WHERE I_RuleID = '{{ JSON.parse(pending_approvals.selectedRow.changed_data).I_RuleID }}';
